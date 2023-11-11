@@ -14,16 +14,30 @@ const routes = [
         path: '/login',
         name: 'login',
         component: Login,
+        meta: {
+            requiresGuest: true
+        }
     },
     {
         path: '/request-password',
-        name: 'request-password',
+        name: 'requestPassword',
         component: RequestPassword,
+        meta: {
+            requiresGuest: true
+        }
     },
     {
-        path: '/request-password/token',
-        name: 'request-password-token',
+        path: '/reset-password/:token',
+        name: 'resetPassword',
         component: ResetPassword,
+        meta: {
+            requiresGuest: true
+        }
+    },
+    {
+        path: '/:pathMatch(.*)',
+        name: 'notfound',
+        component: NotFound,
     }
 ];
 
